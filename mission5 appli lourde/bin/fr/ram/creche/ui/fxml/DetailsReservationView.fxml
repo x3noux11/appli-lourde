@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="fr.ram.creche.ui.controller.DetailsReservationController"
+      spacing="15" styleClass="form-container">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    
+    <Label text="Détails de la Réservation" styleClass="section-title" />
+    
+    <GridPane hgap="15" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" prefWidth="150" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200" prefWidth="300" />
+        </columnConstraints>
+        
+        <!-- Type d'accueil -->
+        <Label text="Type d'accueil:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <Label fx:id="lblTypeAccueil" text="-" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        
+        <!-- Enfant -->
+        <Label text="Enfant:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <Label fx:id="lblEnfant" text="-" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        
+        <!-- Parent -->
+        <Label text="Parent:" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <Label fx:id="lblParent" text="-" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+        
+        <!-- Date -->
+        <Label text="Date:" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <Label fx:id="lblDate" text="-" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+        
+        <!-- Horaires -->
+        <Label text="Horaires:" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <Label fx:id="lblHoraires" text="-" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+        
+        <!-- Tarif -->
+        <Label text="Tarif:" styleClass="form-label" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+        <Label fx:id="lblTarif" text="-" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+        
+        <!-- Statut -->
+        <Label text="Statut:" styleClass="form-label" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+        <Label fx:id="lblStatut" text="-" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+    </GridPane>
+    
+    <!-- Boutons d'action -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="btnAnnuler" text="Annuler la réservation" onAction="#annulerReservation" styleClass="button-danger" />
+        <Button fx:id="btnModifier" text="Modifier" onAction="#modifierReservation" styleClass="button-secondary" />
+        <Button fx:id="btnFermer" text="Fermer" onAction="#fermer" styleClass="button" />
+    </HBox>
+</VBox>

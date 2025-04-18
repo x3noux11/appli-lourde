@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="fr.ram.creche.ui.controller.NouvelleReservationController"
+      spacing="15" styleClass="form-container">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    
+    <Label text="Nouvelle Réservation" styleClass="section-title" />
+    
+    <GridPane hgap="15" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" prefWidth="150" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200" prefWidth="300" />
+        </columnConstraints>
+        
+        <!-- Type d'accueil -->
+        <Label text="Type d'accueil:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <ComboBox fx:id="cmbTypeAccueil" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200" />
+        
+        <!-- Enfant -->
+        <Label text="Enfant:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <ComboBox fx:id="cmbEnfant" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="200" />
+        
+        <!-- Date -->
+        <Label text="Date:" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <DatePicker fx:id="datePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="200" />
+        
+        <!-- Heure début -->
+        <Label text="Heure début:" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <ComboBox fx:id="cmbHeureDebut" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="200" />
+        
+        <!-- Heure fin -->
+        <Label text="Heure fin:" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <ComboBox fx:id="cmbHeureFin" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="200" />
+    </GridPane>
+    
+    <!-- Informations sur la disponibilité et le tarif -->
+    <HBox fx:id="hboxInfoDisponibilite" styleClass="alert-info" spacing="10" alignment="CENTER_LEFT">
+        <Label fx:id="lblInfoDisponibilite" text="Sélectionnez une date et un horaire pour voir la disponibilité" />
+    </HBox>
+    
+    <HBox fx:id="hboxInfoTarif" styleClass="alert-info" spacing="10" alignment="CENTER_LEFT">
+        <Label fx:id="lblInfoTarif" text="Tarif: -- €" />
+    </HBox>
+    
+    <!-- Boutons d'action -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="btnAnnuler" text="Annuler" onAction="#annuler" styleClass="button-secondary" />
+        <Button fx:id="btnEnregistrer" text="Enregistrer" onAction="#enregistrer" styleClass="button-success" />
+    </HBox>
+</VBox>

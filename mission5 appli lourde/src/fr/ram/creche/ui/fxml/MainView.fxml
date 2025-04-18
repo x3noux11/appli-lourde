@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ram.creche.ui.controller.MainController">
+    <!-- En-tête -->
+    <top>
+        <HBox styleClass="header">
+            <Label styleClass="header-title" text="RAM - Gestion de Crèche" />
+        </HBox>
+    </top>
+    
+    <!-- Menu latéral -->
+    <left>
+        <VBox styleClass="sidebar">
+            <Button fx:id="btnPlanning" onAction="#afficherPlanning" styleClass="sidebar-button" text="Planning" />
+            <Button fx:id="btnEnfants" onAction="#afficherEnfants" styleClass="sidebar-button" text="Enfants" />
+            <Button fx:id="btnParents" onAction="#afficherParents" styleClass="sidebar-button" text="Parents" />
+            <Button fx:id="btnReservations" onAction="#afficherReservations" styleClass="sidebar-button" text="Réservations" />
+            <Button fx:id="btnConfiguration" onAction="#afficherConfiguration" styleClass="sidebar-button" text="Configuration" />
+        </VBox>
+    </left>
+    
+    <!-- Contenu principal -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content">
+            <!-- Contenu dynamique chargé par le contrôleur -->
+        </StackPane>
+    </center>
+</BorderPane>

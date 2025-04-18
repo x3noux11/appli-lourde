@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ram.creche.ui.controller.EnfantsController" spacing="10">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <!-- En-tête avec titre et bouton d'ajout -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Gestion des Enfants" styleClass="section-title" />
+        <Region HBox.hgrow="ALWAYS" />
+        <TextField fx:id="txtRecherche" promptText="Rechercher..." prefWidth="200" />
+        <Button fx:id="btnNouvelEnfant" text="Ajouter un enfant" onAction="#ajouterEnfant" styleClass="button-success" />
+    </HBox>
+    
+    <!-- Tableau des enfants -->
+    <TableView fx:id="tableEnfants" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colPrenom" text="Prénom" />
+            <TableColumn fx:id="colNom" text="Nom" />
+            <TableColumn fx:id="colDateNaissance" text="Date de naissance" />
+            <TableColumn fx:id="colAge" text="Âge" />
+            <TableColumn fx:id="colParent" text="Parent" />
+            <TableColumn fx:id="colObservations" text="Observations" />
+            <TableColumn fx:id="colActions" text="Actions" />
+        </columns>
+    </TableView>
+    
+    <!-- Statistiques -->
+    <HBox spacing="20" styleClass="alert-info">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+        <Label fx:id="lblNombreTotal" text="Nombre total d'enfants: 0" />
+        <Label fx:id="lblMoyenneAge" text="Âge moyen: 0 ans" />
+    </HBox>
+</VBox>

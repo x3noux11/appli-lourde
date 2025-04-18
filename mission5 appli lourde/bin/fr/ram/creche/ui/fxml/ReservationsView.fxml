@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ram.creche.ui.controller.ReservationsController" spacing="10">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <!-- En-tête avec titre et options de filtrage -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Gestion des Réservations" styleClass="section-title" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label text="Filtre:" />
+        <ComboBox fx:id="cmbFiltre" promptText="Tous les types" prefWidth="150" />
+        <DatePicker fx:id="dateFiltre" promptText="Toutes les dates" />
+        <TextField fx:id="txtRecherche" promptText="Rechercher..." prefWidth="200" />
+        <Button fx:id="btnNouvelle" text="Nouvelle réservation" onAction="#nouvelleReservation" styleClass="button-success" />
+    </HBox>
+    
+    <!-- Tableau des réservations -->
+    <TableView fx:id="tableReservations" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colType" text="Type" />
+            <TableColumn fx:id="colEnfant" text="Enfant" />
+            <TableColumn fx:id="colParent" text="Parent" />
+            <TableColumn fx:id="colDate" text="Date" />
+            <TableColumn fx:id="colHoraires" text="Horaires" />
+            <TableColumn fx:id="colTarif" text="Tarif" />
+            <TableColumn fx:id="colStatut" text="Statut" />
+            <TableColumn fx:id="colActions" text="Actions" />
+        </columns>
+    </TableView>
+    
+    <!-- Statistiques -->
+    <HBox spacing="20" styleClass="alert-info">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+        <Label fx:id="lblTotal" text="Total réservations: 0" />
+        <Label fx:id="lblTotalRegulier" text="Réservations régulières: 0" />
+        <Label fx:id="lblTotalOccasionnel" text="Réservations occasionnelles: 0" />
+        <Label fx:id="lblRevenuTotal" text="Revenu total: 0,00 €" />
+    </HBox>
+</VBox>

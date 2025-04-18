@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ram.creche.ui.controller.ConfigurationController" spacing="10">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <Label text="Configuration de la crèche" styleClass="view-title"/>
+    
+    <GridPane vgap="10" hgap="10">
+        <padding>
+            <Insets top="20" />
+        </padding>
+        
+        <!-- Capacité maximale -->
+        <Label text="Capacité maximale :" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <Spinner fx:id="spinnerCapacite" min="1" max="100" initialValue="20" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        
+        <!-- Tarif horaire -->
+        <Label text="Tarif horaire (€) :" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <TextField fx:id="fieldTarif" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        
+        <!-- Horaires d'ouverture -->
+        <Label text="Horaires d'ouverture :" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2" 
+              styleClass="section-title" />
+        
+        <!-- Lundi -->
+        <CheckBox fx:id="cbLundi" text="Lundi" selected="true" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="1">
+            <Label text="De" />
+            <ComboBox fx:id="cbLundiOuverture" />
+            <Label text="à" />
+            <ComboBox fx:id="cbLundiFermeture" />
+        </HBox>
+        
+        <!-- Mardi -->
+        <CheckBox fx:id="cbMardi" text="Mardi" selected="true" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="4" GridPane.columnIndex="1">
+            <Label text="De" />
+            <ComboBox fx:id="cbMardiOuverture" />
+            <Label text="à" />
+            <ComboBox fx:id="cbMardiFermeture" />
+        </HBox>
+        
+        <!-- Mercredi -->
+        <CheckBox fx:id="cbMercredi" text="Mercredi" selected="true" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+            <Label text="De" />
+            <ComboBox fx:id="cbMercrediOuverture" />
+            <Label text="à" />
+            <ComboBox fx:id="cbMercrediFermeture" />
+        </HBox>
+        
+        <!-- Jeudi -->
+        <CheckBox fx:id="cbJeudi" text="Jeudi" selected="true" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="1">
+            <Label text="De" />
+            <ComboBox fx:id="cbJeudiOuverture" />
+            <Label text="à" />
+            <ComboBox fx:id="cbJeudiFermeture" />
+        </HBox>
+        
+        <!-- Vendredi -->
+        <CheckBox fx:id="cbVendredi" text="Vendredi" selected="true" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="7" GridPane.columnIndex="1">
+            <Label text="De" />
+            <ComboBox fx:id="cbVendrediOuverture" />
+            <Label text="à" />
+            <ComboBox fx:id="cbVendrediFermeture" />
+        </HBox>
+        
+        <!-- Samedi -->
+        <CheckBox fx:id="cbSamedi" text="Samedi" GridPane.rowIndex="8" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="8" GridPane.columnIndex="1">
+            <Label text="De" />
+            <ComboBox fx:id="cbSamediOuverture" />
+            <Label text="à" />
+            <ComboBox fx:id="cbSamediFermeture" />
+        </HBox>
+        
+        <!-- Dimanche -->
+        <CheckBox fx:id="cbDimanche" text="Dimanche" GridPane.rowIndex="9" GridPane.columnIndex="0" />
+        <HBox spacing="10" GridPane.rowIndex="9" GridPane.columnIndex="1">
+            <Label text="De" />
+            <ComboBox fx:id="cbDimancheOuverture" />
+            <Label text="à" />
+            <ComboBox fx:id="cbDimancheFermeture" />
+        </HBox>
+    </GridPane>
+    
+    <HBox alignment="CENTER" spacing="10">
+        <padding>
+            <Insets top="20" />
+        </padding>
+        <Button text="Enregistrer" fx:id="btnSave" onAction="#sauvegarderConfiguration" />
+        <Button text="Annuler" fx:id="btnCancel" onAction="#annuler" />
+    </HBox>
+</VBox>
